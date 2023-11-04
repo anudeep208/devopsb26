@@ -80,3 +80,11 @@ resource "aws_security_group" "allow_all" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+resource "aws_s3_bucket" "s3" {
+  bucket = "cloudvision.social"
+  tags = {
+    Name = "devops"
+  }
+  depends_on = [aws_route_table_association.terraform-public]
+}

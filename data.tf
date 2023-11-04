@@ -35,4 +35,7 @@ resource "aws_instance" "web-2" {
     Owner      = "Anudeep"
     CostCenter = "ABCD"
   }
+  lifecycle {
+    ignore_changes = [tags]
+  }
 }
